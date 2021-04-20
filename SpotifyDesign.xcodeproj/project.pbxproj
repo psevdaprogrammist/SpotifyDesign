@@ -11,6 +11,8 @@
 		57DE4A39262EAC4F007EB4D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DE4A38262EAC4F007EB4D5 /* ContentView.swift */; };
 		57DE4A3B262EAC50007EB4D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57DE4A3A262EAC50007EB4D5 /* Assets.xcassets */; };
 		57DE4A3E262EAC50007EB4D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57DE4A3D262EAC50007EB4D5 /* Preview Assets.xcassets */; };
+		57DE4A49262EAD1B007EB4D5 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DE4A48262EAD1B007EB4D5 /* Song.swift */; };
+		57DE4A4C262EAD4D007EB4D5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DE4A4B262EAD4D007EB4D5 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		57DE4A3A262EAC50007EB4D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57DE4A3D262EAC50007EB4D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		57DE4A3F262EAC50007EB4D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57DE4A48262EAD1B007EB4D5 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		57DE4A4B262EAD4D007EB4D5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,8 @@
 			isa = PBXGroup;
 			children = (
 				57DE4A35262EAC4F007EB4D5 /* SpotifyDesign */,
+				57DE4A47262EACDD007EB4D5 /* Model */,
+				57DE4A46262EACCC007EB4D5 /* View */,
 				57DE4A34262EAC4F007EB4D5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,8 +58,6 @@
 		57DE4A35262EAC4F007EB4D5 /* SpotifyDesign */ = {
 			isa = PBXGroup;
 			children = (
-				57DE4A36262EAC4F007EB4D5 /* SpotifyDesignApp.swift */,
-				57DE4A38262EAC4F007EB4D5 /* ContentView.swift */,
 				57DE4A3A262EAC50007EB4D5 /* Assets.xcassets */,
 				57DE4A3F262EAC50007EB4D5 /* Info.plist */,
 				57DE4A3C262EAC50007EB4D5 /* Preview Content */,
@@ -67,6 +71,24 @@
 				57DE4A3D262EAC50007EB4D5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		57DE4A46262EACCC007EB4D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57DE4A36262EAC4F007EB4D5 /* SpotifyDesignApp.swift */,
+				57DE4A38262EAC4F007EB4D5 /* ContentView.swift */,
+				57DE4A4B262EAD4D007EB4D5 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57DE4A47262EACDD007EB4D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57DE4A48262EAD1B007EB4D5 /* Song.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +160,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57DE4A49262EAD1B007EB4D5 /* Song.swift in Sources */,
+				57DE4A4C262EAD4D007EB4D5 /* HomeView.swift in Sources */,
 				57DE4A39262EAC4F007EB4D5 /* ContentView.swift in Sources */,
 				57DE4A37262EAC4F007EB4D5 /* SpotifyDesignApp.swift in Sources */,
 			);
