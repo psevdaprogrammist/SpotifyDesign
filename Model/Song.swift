@@ -30,4 +30,4 @@ var likedSongs = [
     Song(album_name: "Jesus is king", album_author: "Kanye West", album_cover: "jesus")
 ]
 
-var generes = ["Rap","Hip-Hop","Pop"]
+var genres = ["Rap","Hip-Hop","Pop","Electronic","Rock","House","PepeChill"]

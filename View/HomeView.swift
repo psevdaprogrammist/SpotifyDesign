@@ -64,11 +64,16 @@ struct HomeView: View {
                             ZStack(alignment:.bottomLeading) {
                                 Image(item.album_cover)
                                     .resizable()
-                                    .aspectRatio(contentMode: .fill)
+                                    .aspectRatio(contentMode: .fit)
                                     .cornerRadius(20)
+                                // Dark shading at bottom sp that the data will be visible
+                                    .overlay(LinearGradient(gradient: .init(colors: [Color.clear,Color.clear,Color.black]), startPoint: .top, endPoint: .bottom)
+                                        .cornerRadius(20)
+                                    )
+                                
                                     
                                 
-                                HStack {
+                                HStack(spacing: 15) {
                                     
                                     Button(action: {}, label: {
                                         Image(systemName: "play.fill")
@@ -77,6 +82,18 @@ struct HomeView: View {
                                             .padding(20)
                                             .background(Color("logoColor"))
                                             .clipShape(Circle())
+                                    })
+                                    VStack(alignment: .leading, spacing: 5, content: {
+                                        
+                                        Text(item.album_name)
+                                            .font(.title2)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.white)
+                                        
+                                        Text(item.album_author)
+                                            .font(.none)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.white)
                                     })
                                 }
                                 .padding()
@@ -89,6 +106,57 @@ struct HomeView: View {
                     .frame(height: 350)
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                     .padding(.top, 20)
+                    
+                    Text("Genres")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.top, 30)
+                    
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(),spacing: 15), count: 3), spacing: 20,content: {
+                        // List of Genres
+                        
+                        ForEach(genres, id: \.self){ genre in
+                            
+                            Text(genre)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .padding(.vertical,8)
+                                .frame(maxWidth: .infinity)
+                                .background(Color.white.opacity(0.06))
+                                .clipShape(Capsule())
+                            
+                        }
+                    })
+                    .padding(.top,20)
+                    
+                    Text("Liked Songs")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.top, 30)
+                    
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(),spacing: 10), count: 2), spacing: 10,content: {
+                        
+                        // Liked
+                        ForEach(likedSongs){ song in
+                            
+                            GeometryReader{proxy in
+                                
+                                Image(song.album_cover)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: proxy.frame(in: .global).width, height: 150)
+                                    .cornerRadius(10)
+                            }
+                            .frame(height: 150)
+                        }
+                        
+                    })
+                    .padding(.horizontal)
+                    .padding(.top,20)
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
